@@ -452,7 +452,7 @@
               history.pushState(null, '', newRelativePathQuery);
               $('#imgid').val(idx);
 
-              $.getJSON('https://vcr-movies.s3-us-west-1.amazonaws.com/relation_predictions_9000_57000.json?sigh=' + Math.floor(Math.random() * 1000), function (relation_data) {
+              $.getJSON('html_file/relation_predictions_9000_57000.json?sigh=' + Math.floor(Math.random() * 1000), function (relation_data) {
 
                 // console.log(relation_data[idx]);
                 console.log(relation_data[idx]);
@@ -579,7 +579,7 @@
         $.ajax({
             'async': false,
             'global': false,
-            'url': 'https://vcr-movies.s3-us-west-1.amazonaws.com/relation_predictions_9000_57000.json?sigh=' + Math.floor(Math.random() * 1000),
+            'url': 'html_file/relation_predictions_9000_57000.json?sigh=' + Math.floor(Math.random() * 1000),
             'dataType': "json",
             'success': function (data) {
                 for (let d of data) {
@@ -634,3 +634,6 @@
 
       });
 </script>
+
+
+
