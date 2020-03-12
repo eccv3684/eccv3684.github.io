@@ -1,0 +1,639 @@
+<html lang="en">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+
+      <!-- BOOTSTRAP CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+      <!-- HITPUB CSS -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+      <style type="text/css">
+
+    /***********************************************
+    MOSAIC BOOSTRAP OVERWRITES
+    ***********************************************/
+    #hitinfo .card {
+        border-radius: 0;
+    }
+    #hitinfo .card:first-child {
+        border-bottom: 0;
+    }
+     #hitinfo button.btn-link {
+        color: #06486F;
+        text-decoration: none;
+        margin: 0
+     }
+    #hitinfo button.btn-link:hover {
+        text-decoration: none;
+    }
+    #hit ul.question-choice {
+        list-style-type: none;
+    }
+    #hit #mturk_form .card {
+        border: none;
+        background-color: inherit;
+    }
+    #hit .accordion .card-header {
+        background-color: #E5E5E5;
+        border: none;
+    }
+    #hit .card {
+        border: none;
+    }
+    /***********************************************
+    MOSAIC GENERAL STYLING
+    ***********************************************/
+    #hit {
+        background-color: rgba(0,0,0,.03);
+        padding-bottom: 4rem;
+    }
+     body {
+        font-family: "Open Sans", "Roboto", sans-serif;
+        font-size: .92rem;
+     }
+    textarea#feedback {
+        width: 100%;
+        border: 1px solid #ddd;
+    }
+    textarea#feedback:focus {
+        outline: none !important;
+        border-color: #85c8ea;
+    }
+    input#submitButton {
+        margin: auto;
+        display: block;
+        background-color: #2172a4;
+        color: #fff;
+        font-size: 1.125rem;
+        padding: .5rem 1rem;
+        cursor: pointer;
+        border-radius: 1rem;
+    }
+    input#submitButton:hover {
+        background-color: #06486F;
+    }
+    #event, div.question {
+        //border-bottom: solid 1px #ccc;
+    }
+    .event-container h4 {
+        font-size: 1.24rem;
+        padding: 1rem 1.5rem;
+    }
+    .event {
+        background-color: rgba(0,0,0,.03);
+        border-radius: 1rem;
+        margin-top: 25px;
+        margin-bottom: 0px;
+    }
+    input.person {
+        margin-left: 20px;
+        border: none;
+        background-color: white;
+        text-align: left;
+    }
+    input.inline_blank {
+        border: none;
+        border-bottom: solid 1px #ccc;
+        background-color: inherit;
+        text-align: left;
+    }
+    input.inline_blank.use {
+        text-align: left;
+    }
+    input.inline_blank:focus {
+        outline: none;
+    }
+    .optional span.obj-num, .optional span.indicator {
+        color: #aaa;
+    }
+    span.optional {
+        font-style: italic;
+    }
+    div.question-field-group .card-body{
+        padding: 2rem 0 0;
+    }
+    div.example div.card-body {
+        padding: 1rem 0 0;
+    }
+    div.form-check, div.form-check label, div.form-check input {
+        cursor: pointer;
+    }
+    .example {
+        padding: 2rem 0;
+        border-bottom: solid 1px #ccc;
+    }
+    div.example:last-child {
+        border-bottom: none;
+    }
+    div.question-container{
+        padding: 3rem 0;
+        border-bottom: solid 1px #ccc;
+    }
+    div.question-container:first-child{
+        padding: 0 0 5rem;
+    }
+    li {
+        margin-top: 0;
+    }
+    li.level1 {
+        margin-top: 1rem;
+    }
+    #instructions li.warning {
+        color: darkorange;
+    }
+    #instructions li.sub-warning {
+        color: black;
+    }
+    #instructions li.good {
+        color: green;
+    }
+    #instructions li.bad {
+        color: darkred;
+    }
+    div.req-obj-container div.card-body {
+        padding: 0;
+    }
+    div.req-obj-fields-container {
+        padding-left: 0;
+    }
+    span.highlight {
+        font-weight: bold;
+        color: darkslateblue;
+    }
+    span.emphasize {
+        font-style: italic;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    div.xneed div.card-body {
+        padding: 0;
+    }
+
+    .minipad {
+        padding-left: 0rem;
+    }
+    .questionrow {
+        border-bottom: 1px solid gray;
+        padding-bottom: 2px;
+        margin-bottom: 4px;
+        margin-left: 0;
+        margin-right: -5px;
+    }
+
+    .panel {
+        padding: 10px;
+        margin-bottom: 3px;
+        margin-top: 5px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        font-size: 11pt;
+    }
+    .table {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        background-color: #e6e6e633;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .table td, .table th {
+        padding: 0.3rem;
+    }
+
+    table {
+      width:500px;
+      table-layout:fixed;
+    }
+
+
+    td {
+      word-wrap:break-word;
+    }
+
+    .body {
+        font-size:11pt;
+    }
+
+    .emph {
+        background-color: #c3e6cb;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .superemph {
+        background-color: #e6a0a5;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .deemph {
+        /*background-color: #f9f9f9;*/
+        color: #141414;
+        /*font-weight: lighter;*/
+        font-size:10pt;
+    }
+
+    .row {
+        margin-right: -5px;
+        margin-left:-5px;
+    }
+    .questionbox {
+        padding-right: 1px;
+        padding-left: 1px;
+    }
+    .choicebox{
+      padding-right: 1px;
+      padding-left: 1.5rem;
+    }
+    .answerbox {
+        padding-right: 1px;
+        padding-left: 1px;
+    }
+    .input-group-text {
+        padding: 3px;
+        font-size: 0.8rem;
+    }
+    .card-header {
+        padding: .25rem .5rem;
+    }
+    .card {
+        margin-bottom: 3px;
+    }
+    .card-body {
+        padding-top: .75rem;
+        padding-bottom: 0;
+    }
+    .list-group-item {
+        padding: .2rem .5rem;
+        background-color: #e6e6e6;
+    }
+
+    .image-toggle {
+        border-color: #000;
+        white-space: normal;
+        color: #fff;
+    }
+
+    .img-container {
+      position: relative;
+      display: inline-block;
+    }
+    .annotimage {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin-top:0;
+    }
+
+    .drawing-class {
+        height:0;
+    }
+    .segmentation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height:100%;
+      width:100%;
+    }
+
+    .smalltxt {
+        font-size:.6rem;
+    }
+    .form-check {
+        padding-left:0;
+        font-size:0.75rem;
+    }
+    .form-check-input {
+        margin-left:0;
+        position: relative;
+    }
+
+    .btn-sm {
+        border-radius: .2rem;
+        padding: 0.1rem 0.5rem;
+        margin-bottom:0;
+    }
+
+    .container {
+        padding:0;
+    }
+    .col-xl-12 {
+        padding:0;
+    }
+
+
+</style>
+
+      <!-- HIT START -->
+      <div id="hit" class="container">
+          <div class="body">
+                    <div class="input-group-prepend" style="padding-top: 1rem">
+                          <input type="text" class="col-lg-2 form-control" placeholder="(0-87)" id="imgid">
+                          <button type="button" class="btn btn-success" id="goto">Go! &nbsp;<i class="fas fa-play"></i></button>
+                    </div>
+                    <a href="#" id="prev">&laquo; Previous</a>
+                    <a href="#" id="next">Next &raquo;</a>
+
+                    <div class="img-container">
+                        <img class="img-fluid annotimage" id='img2show'>
+                        <div id="drawing" class="drawing-class"></div>
+                    </div>
+                    <div class="row">
+                        <div id="globalbutton" class="col-lg-2 text-center" style="padding:0"></div>
+                        <div class="col-lg-10 buttonrow"></div>
+                    </div>
+
+                    <p id="img_id"> </p>
+
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#comet" aria-expanded="true" aria-controls="instructions">
+                                Comet Predictions (click to expand/collapse) <br>
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show" id="comet">
+                        <div class="questionrow">
+                          <p id="place"><b></b></p>
+                          <div class="card-body ctable0">
+                              <p id="event_orig0"><b></b></p>
+                              <p id="event0"><b></b></p>
+                              <table class="table table0" style="background-color: white">
+                                <thead><tr><th></th><th><span class="btn-warning"> Before, PersonX needed to... </span></th> <th><span class="btn-secondary"> Because, PersonX wanted to... </span></th><th><span class="btn-success"> After, PersonX will most likely... </span></th></tr></thead>
+                                <tbody>
+                                  <!--<tr><td style="color:blue; font-weight:bold">Actual:</td><td class="need0 gt"></td><td class="intent0 gt"> </td><td class="react0 gt"></td></tr>-->
+                                </tbody>
+                              </table>
+                          </div>
+
+                          <div class="card-body ctable1">
+                              <p id="event_orig1"><b></b></p>
+                              <p id="event1"><b></b></p>
+                              <table class="table table1" style="background-color: white">
+                                <thead><tr><th></th><th><span class="btn-warning"> Before, PersonX needed to... </span></th> <th><span class="btn-secondary"> Because, PersonX wanted to... </span></th><th><span class="btn-success"> After, PersonX will most likely... </span></th></tr></thead>
+                                <tbody>
+                                  <!--<tr><td style="color:blue; font-weight:bold">Actual:</td><td class="need1 gt"></td><td class="intent1 gt"> </td><td class="react1 gt"></td></tr>-->
+                                </tbody>
+                              </table>
+                          </div>
+
+                          <div class="card-body ctable2">
+                              <p id="event_orig2"><b></b></p>
+                              <p id="event2"><b></b></p>
+                              <table class="table table1" style="background-color: white">
+                                <thead><tr><th></th><th><span class="btn-warning"> Before, PersonX needed to... </span></th> <th><span class="btn-secondary"> Because, PersonX wanted to... </span></th><th><span class="btn-success"> After, PersonX will most likely... </span></th></tr></thead>
+                                <tbody>
+                                  <!--<tr><td style="color:blue; font-weight:bold">Actual:</td><td class="need2 gt"></td><td class="intent2 gt"> </td><td class="react2 gt"></td></tr>-->
+                                </tbody>
+                              </table>
+                          </div>
+
+                        </div>
+                    </div>
+
+          </div>
+      </div>
+      <!-- HIT END -->
+
+      <!-- BOOSTRAP JS -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js" integrity="sha256-QvaFssiJCr71CxCZfYVWAXXGlwAqXbXerSdoW2t/Few=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.7/chroma.min.js"></script>
+      <script src="https://cdn.rawgit.com/internalfx/distinct-colors/3bbd4cc2/dist/distinct-colors.min.js"></script>
+
+      <!-- HITPUB JS -->
+      <script>
+          const FONTSIZE=25;
+          const searchParams = new URLSearchParams(window.location.search);
+
+          function flattenPoints(points) {
+              const scaledPoints = [];
+              for(let i=0; i < points.length; i++) {
+                  scaledPoints.push(points[i][0]);
+                  scaledPoints.push(points[i][1]);
+              }
+              return scaledPoints
+          }
+
+          function drawSegmentation(name, box, segm, color, width, height) {
+              const draw = SVG('drawing').viewbox(0, 0, width, height);
+              draw.addClass('segmentation');
+              for (let i=0; i < segm.length; i++) {
+                  draw.polygon(flattenPoints(segm[i])).fill({color: color.brighten(2).hex(), opacity: 0.3}).stroke({opacity:0.5, width:2, color:color.darken(2).hex()});
+              }
+              draw.rect(box[2]-box[0], box[3]-box[1]).move(box[0],box[1]).fill({opacity: 0}).stroke({opacity: 0.8, width: 5, color:color.hex()});
+
+              // const group = draw.group();
+              const color2use = '#000';
+              const topY = box[1]-FONTSIZE-7 > 0 ? box[1]-FONTSIZE-7 : box[1]-3;
+
+              const mytext = draw.text(name).move(box[0]+2, topY).font({family: 'Helvetica', size: FONTSIZE, weight:500}).fill(color2use);
+              const thebox = mytext.bbox();
+              draw.rect(thebox.w+4, thebox.h+4).move(thebox.x, thebox.y-2).fill({color: color.brighten(2).hex(), opacity: 0.8}).stroke({opacity:0.8, width:3, color:color.hex()}).backward();
+              return draw;
+          }
+
+          function displayPic(idx) {
+
+              searchParams.set('im', idx);
+              let newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+              history.pushState(null, '', newRelativePathQuery);
+              $('#imgid').val(idx);
+
+              $.getJSON('html_file/relation_predictions_9000_57000.json?sigh=' + Math.floor(Math.random() * 1000), function (relation_data) {
+
+                // console.log(relation_data[idx]);
+                console.log(relation_data[idx]);
+                $("#img2show").attr("src", "https://s3-us-west-2.amazonaws.com/ai2-rowanz/vcr1images/" + relation_data[idx].img_fn);
+                $('#img_id').text('Image ID: ' + relation_data[idx].img_fn);
+                $('#place').html('<b> Place </b>: ' + relation_data[idx].place);
+
+                i = 0;
+                let modes = relation_data[idx]['mode'];
+                modes.push('gt');
+                console.log(modes);
+
+                for (let i = 0; i < 3; i++) {
+                  let event_orig = 'event_orig'+i;
+                  if (typeof relation_data[idx]['event_orig'+i] !== 'undefined') {
+                    $('#' + event_orig).html('<span style="background-color:white"><b>' + 'event: '+ relation_data[idx]['event_orig'+i].replace(/\./g, '') + '</b> </span>');
+                    $('.ctable' + i).show();
+                    $('.table' + i + ' tbody').empty();
+                    for (let mode of modes) {
+                      $('.table' + i + ' tbody').append('<tr> <td> <b>' + mode + '</b></td> ' +
+                                                           '<td class="need' + i +  ' ' + mode + '"></td>' +
+                                                           '<td class="intent' + i +  ' ' + mode + '"></td>' +
+                                                           '<td class="react' + i +  ' ' + mode + '"></td></tr>');
+                      for (let relation of ['need', 'intent', 'react']) {
+
+                        let relation_key = mode + ' ' + relation + i;
+                        if (typeof relation_data[idx][relation_key] !== 'undefined') {
+                          let html_text = '';
+                          for (let r of relation_data[idx][relation_key])
+                            html_text += r.replace(/\./g, '') + '<br>';
+
+                          console.log(mode, relation_key, html_text);
+                          $('.' + relation + i + '.' + mode).html(html_text);
+                        }
+
+                        // let html_text = '';
+                        // for (let r of relation_data[idx]['gt ' + relation + i])
+                        //   html_text += r + '<br>';
+                        // $('.' + relation + i + '.gt').html('<span style="color: blue; font-weight:bold">' + html_text + '</span>');
+                      }
+                    }
+
+                  } else {
+                    $('.ctable' + i).hide();
+                  }
+                }
+
+
+                $('.hitbox').each(function() {
+                    let id = $(this).attr('id');
+                    $(this).val(relation_data[idx][id]);
+                    if (relation_data[idx][id].length > 0) {
+                      $('#'+id).show();
+                    }
+                    else {
+                      $('#'+id).hide();
+                    }
+                });
+
+
+                $.getJSON('https://s3-us-west-2.amazonaws.com/ai2-rowanz/vcr1images/' + relation_data[idx].metadata_fn + '?sigh=' + Math.floor(Math.random() * 1000), function (data) {
+
+                  // $.getJSON('all_relations.json?t=' + new Date, function (data) {
+                  // Show or hide on hover
+                  console.log(data);
+                  const palette = new DistinctColors({count: data.names.length, lightMin: 25});
+
+                  $('.buttonrow > button.active').click();
+                  $('.buttonrow').empty();
+                  $('#globalbutton').empty();
+
+                  for (let i = 0; i < data.names.length; i++) {
+                    let bgcolor = palette[i].darker().hex();
+                    let bgcolorHighlight = palette[i].brighten().hex();
+                    let name_i = (i + 1).toString() + " (" + data.names[i] + ")";
+
+                    let mybutton = $('<button type="button" class="btn image-toggle active" style="background-color: ' + bgcolorHighlight + '; color: #000" data-toggle="button" aria-pressed="true">').text(name_i);
+                    let draw = drawSegmentation(name_i, data.boxes[i], data.segms[i], palette[i], data.width, data.height);
+                    mybutton.on('click', function () {
+                      if (mybutton.attr('aria-pressed') === 'true') {
+                        mybutton.css({backgroundColor: bgcolor, color: '#fff'});
+                        draw.attr('opacity', 0);
+                      } else {
+                        draw.attr('opacity', 1);
+                        mybutton.css({backgroundColor: bgcolorHighlight, color: '#000'});
+                      }
+                    });
+
+                    mybutton.hover(function () {
+                      if (mybutton.attr('aria-pressed') === 'true') {
+                        mybutton.css({backgroundColor: bgcolor, color: '#fff'});
+                      } else {
+                        mybutton.css({backgroundColor: bgcolorHighlight, color: '#000'});
+                      }
+                    }, function () {
+                      if (mybutton.attr('aria-pressed') === 'true') {
+                        mybutton.css({backgroundColor: bgcolorHighlight, color: '#000'});
+                      } else {
+                        mybutton.css({backgroundColor: bgcolor, color: '#fff'});
+                      }
+                    });
+                    $('.buttonrow').append(mybutton);
+
+                  }
+                  let hideall = $('<button type="button" class="btn btn-outline-dark">').text('hide all').appendTo('#globalbutton');
+                  hideall.on('click', function () {
+                    $('.buttonrow > button.active').click();
+                  });
+
+                  let showall = $('<button type="button" class="btn btn-outline-dark">').text('show all').appendTo('#globalbutton');
+                  showall.on('click', function () {
+                    $('.buttonrow > button:not(.active)').click();
+                  });
+
+                });
+                });
+          }
+
+
+      $(document ).ready(function() {
+
+        var idx = 0;
+        var max = 0;
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url': 'html_file/relation_predictions_9000_57000.json?sigh=' + Math.floor(Math.random() * 1000),
+            'dataType': "json",
+            'success': function (data) {
+                for (let d of data) {
+                  max += 1;
+                }
+            }
+        });
+        max = max - 1;
+        $('#imgid').attr("placeholder", "(0-" + max + ")");
+
+        if (searchParams.has('im')) {
+            idx = parseInt(searchParams.get('im'));
+            if ((idx < 0) || (idx > max)) {
+              alert("index must be between 0 and "+ max + " inclusive");
+            }
+        }
+        displayPic(idx);
+        $('#prev').click(function(){
+            idx = idx-1;
+            if (idx < 0)
+              idx = max;
+            displayPic(idx);
+        });
+
+        $('#next').click(function(){
+            idx = idx + 1;
+            if (idx > max)
+              idx = 0;
+            displayPic(idx);
+        });
+
+        $('#goto').on('click', function() {
+            let target = $('#imgid').val();
+            if (isNaN(parseInt(target))) {
+                alert("Invalid image ID. It should be a single number.");
+            } else {
+                let number = parseInt(target);
+                if ((number < 0) || (number > max)) {
+                    alert("ID must be between 0 and "+ max + " inclusive");
+                } else {
+                    idx = number;
+                    displayPic(number);
+                }
+            }
+        });
+
+        $('#imgid').on('keypress', function(e) {
+            if (e.keyCode === 13) {
+                $('#goto').click();
+            }
+        });
+
+      });
+</script>
+
+
+
